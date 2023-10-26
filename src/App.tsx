@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Reservation from './components/list/Reservation';
+import NewReservation from './components/add/NewReservation';
+import EditReservation from './components/edit/EditReservation';
 
 function App() {
+  const [listPage, setListPage] = useState(true);
+  const [addPage, setAddPage] = useState(false);
+  const [editPage, setEditPage] = useState(false);
+
+  const moveAddPage = () => {
+    setListPage(false);
+    setAddPage(true);
+  };
+  const moveEditPage = () => {
+    setListPage(false);
+    setEditPage(true);
+  };
+  const moveListPage = () => {
+    setAddPage(false);
+    setEditPage(false);
+    setListPage(true);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {listPage && (
+        <Reservation moveAddPage={moveAddPage} moveEditPage={moveEditPage} />
+      )}
+      {addPage && <NewReservation moveListPage={moveListPage} />}
+      {editPage && <EditReservation moveListPage={moveListPage} />}
     </div>
   );
 }

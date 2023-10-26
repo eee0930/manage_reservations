@@ -1,0 +1,40 @@
+.Btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 12px;
+  height: 35px;
+  background: linear-gradient(#fbfbfb, #f1f1f1);
+  background-color: #f1f1f1;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+.Btn.primary {
+  background: linear-gradient(#f66834, #eb470c);
+}
+.Btn.primary span {
+  color: #fff;
+}
+.Btn span {
+  display: none;
+  font-size: 13px;
+  color: #525252;
+}
+.Btn span.primary {
+  color: #eb470c;
+}
+@media (min-width: 546px) {
+  .Btn span {
+    display: inline-block;
+  }
+}
+@media (min-width: 1199px) {
+  .Btn {
+    padding: 2px 15px;
+    height: 40px;
+  }
+  .Btn span {
+    font-size: 15px;
+  }
+}

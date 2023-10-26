@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+![1](https://github.com/eee0930/manage_reservations/assets/37135523/64d81a57-2c5e-4907-9779-1241fd2d6d0c)
+1.png (예약 리스트 빈칸)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ - Reservation List 보이는 페이지 이지만 reservation 이 없을경우.
+ - New Reservation 을 누르면 2.png 로 넘어감
 
-## Available Scripts
+![2](https://github.com/eee0930/manage_reservations/assets/37135523/f7faf863-0c57-4f64-b405-ae076168b902)
+2.png (예약 만들기)
 
-In the project directory, you can run:
+ 새로운 reservation 만드는 페이지.
+ - Back 버튼 누르면 1.png 로 돌아감
+ - Customer Name, Phone Number, Reservation Date, Guest Count, Tables, 그리고 노트를 넣을수 있는 Form.
+ - Select Date 누르면 3.png 로 넘어감.
+ - Select Table 누르면 1개 이상의 테이블을 고를수 있음.
 
-### `npm start`
+![3](https://github.com/eee0930/manage_reservations/assets/37135523/5629d59e-bd90-4183-9061-2ce01c18ffce)
+3.png (예약 날짜 고르기)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ - 예약 시간, 날짜를 고를수 있는 창.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![4](https://github.com/eee0930/manage_reservations/assets/37135523/513cb00d-ca28-4bf8-9bd9-735434cd420a)
+4.png (예약 리스트)
 
-### `npm test`
+ - 만든 예약 리스트가 보여짐. (손님 이름, 전화번호, 예약날짜, 인원수, 테이블, 노트)
+ - 휴지통 버튼을 누르면 예약 삭제.
+ - Seated 누를경우 삭제는 되지 않지만 리스트에서 사라짐.
+ - 예약 카드를 누를 경우 5.png 로 넘어감
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![5](https://github.com/eee0930/manage_reservations/assets/37135523/2122b399-7f11-493f-8fd1-d8d54291dcb1)
+5.png (예약 수정)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - 기존 예약 카드에 담겨져있던 내용으로 이미 내용이 채워져있음.
+ - 기존 예약 데이터 (Svelte Store 에 있는) 를 변경하는 기능
