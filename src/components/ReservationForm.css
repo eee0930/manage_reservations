@@ -1,0 +1,70 @@
+.form-container {
+  background-color: #fff;
+  width: 100%;
+  height: calc(100% - 62px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-group {
+  height: 40px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.form-group label {
+  background-color: #fff;
+  color: #b9b9b9;
+  padding: 2px 3px;
+  position: absolute;
+  left: 1.5rem;
+  top: calc(50% - 10px);
+  font-size: 12px;
+  z-index: 0;
+  transition: top 0.3s ease;
+}
+.form-group label span {
+  color: #ff652d;
+}
+.form-group.full button {
+  width: 100%;
+}
+.input {
+  width: 100%;
+  border: solid 1.5px #d9d9d9;
+  border-radius: 8px;
+  height: 100%;
+  background-color: transparent;
+  font-size: 13px;
+  padding: 2px calc(1rem + 3px);
+  outline: none;
+  z-index: 2;
+  position: relative;
+}
+textarea.input {
+  height: auto;
+  min-height: 100px;
+}
+.input:focus {
+  border: solid 1.5px #ff652d;
+}
+.input:focus ~ label, .input.inputed ~ label {
+  top: -10px;
+  z-index: 3;
+}
+
+.form-wrapper, .button-wrapper {
+  padding: 1rem;
+}
+
+@media (min-width: 1199px) {
+  .form-container {
+    height: calc(100% - 76px);
+  }
+  .form-group {
+    height: 45px;
+  }
+  .input {
+    font-size: 15px;
+    padding: 2px 15px;
+  }
+}

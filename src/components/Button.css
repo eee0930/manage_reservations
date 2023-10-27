@@ -2,6 +2,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
   padding: 2px 12px;
@@ -10,8 +11,29 @@
   background-color: #f1f1f1;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
+.Btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.Btn.md {
+  height: 40px;
+}
+.Btn.lg {
+  height: 55px;
+}
+.Btn.square {
+  padding: 2px;
+  width: 35px;
+}
+.Btn.square.md {
+  width: 40px;
+}
+.Btn.square.lg {
+  width: 55px;
+}
 .Btn.primary {
   background: linear-gradient(#f66834, #eb470c);
+  width: 100%;
 }
 .Btn.primary span {
   color: #fff;
@@ -20,6 +42,10 @@
   display: none;
   font-size: 13px;
   color: #525252;
+  margin: 0 3px;
+}
+.Btn.lg span {
+  font-size: 15px;
 }
 .Btn span.primary {
   color: #eb470c;
@@ -34,7 +60,25 @@
     padding: 2px 15px;
     height: 40px;
   }
+  .Btn.md {
+    height: 45px;
+  }
+  .Btn.lg {
+    height: 60px;
+  }
+  .Btn.square {
+    width: 40px;
+  }
+  .Btn.square.md {
+    width: 45px;
+  }
+  .Btn.square.lg {
+    width: 60px;
+  }
   .Btn span {
     font-size: 15px;
+  }
+  .Btn.lg span {
+    font-size: 18px;
   }
 }

@@ -1,6 +1,6 @@
 .card-container {
   width: 100%;
-  height: calc(100% - 76px);
+  height: calc(100% - 62px);
   padding: 1rem;
 }
 .card-wrapper {
@@ -8,4 +8,10 @@
   flex-wrap: wrap;
   overflow: auto;
   max-width: 100%;
+}
+
+@media (min-width: 1199px) {
+  .card-container {
+    height: calc(100% - 76px);
+  }
 }

@@ -19,11 +19,28 @@ body {
   height: calc(100vh - 2rem);
   overflow: hidden;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+}
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  padding: 0 0.5rem;
+}
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 0 0.5rem;
+}
 
 @media (min-width: 991px) {
   .App{
     width: 700px;
-    height: 500px;
+    height: 530px;
   }
 }
 @media (min-width: 1199px) {
