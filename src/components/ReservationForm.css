@@ -1,15 +1,15 @@
 .form-container {
   background-color: #fff;
   width: 100%;
-  height: calc(100% - 62px);
+  height: calc(100% - 65.6px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .form-group {
-  height: 40px;
+  height: 50px;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
 }
 .form-group label {
   background-color: #fff;
@@ -28,6 +28,29 @@
 .form-group.full button {
   width: 100%;
 }
+.inline-form-group {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+.inline-form-group span {
+  width: 55px;
+  text-align: center;
+}
+.inline-form-group .num {
+  font-size: 1.2rem;
+}
+.select-form .input {
+  cursor: pointer;
+}
+.select-form svg {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 1.5rem;
+  top: calc(50% - 14px);
+}
 .input {
   width: 100%;
   border: solid 1.5px #d9d9d9;
@@ -42,7 +65,9 @@
 }
 textarea.input {
   height: auto;
-  min-height: 100px;
+  min-height: 150px;
+  padding: 1.5rem calc(1rem + 3px);
+  resize: none;
 }
 .input:focus {
   border: solid 1.5px #ff652d;
@@ -58,13 +83,34 @@ textarea.input {
 
 @media (min-width: 1199px) {
   .form-container {
-    height: calc(100% - 76px);
+    height: calc(100% - 88.4px);
   }
   .form-group {
-    height: 45px;
+    height: 60px;
+  }
+  .form-group, .inline-form-group {
+    margin-bottom: 2rem;
+  }
+  .inline-form-group span {
+    font-size: 14px;
+    width: 70px;
+  }
+  .inline-form-group .num {
+    font-size: 1.5rem;
+  }
+  .form-group label {
+    font-size: 14px;
+    left: 2rem;
   }
   .input {
     font-size: 15px;
-    padding: 2px 15px;
+    padding: 2px 1.5rem;
+  }
+  textarea.input {
+    min-height: 200px;
+    padding: 1.8rem 1.5rem;
+  }
+  .form-wrapper, .button-wrapper {
+    padding: 1.2rem;
   }
 }

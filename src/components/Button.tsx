@@ -3,7 +3,7 @@ import './Button.css';
 
 interface IButton {
   children: React.ReactNode;
-  callback: () => void;
+  callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
   styleIdx?: number;
   sizeIdx?: number;
   disabled?: boolean;

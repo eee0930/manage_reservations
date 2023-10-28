@@ -45,7 +45,7 @@ body {
 }
 @media (min-width: 1199px) {
   .App {
-    width: 1000px;
-    height: 750px;
+    width: 850px;
+    height: 680px;
   }
 }

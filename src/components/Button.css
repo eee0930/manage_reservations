@@ -6,7 +6,7 @@
   border: none;
   border-radius: 5px;
   padding: 2px 12px;
-  height: 35px;
+  height: 40px;
   background: linear-gradient(#fbfbfb, #f1f1f1);
   background-color: #f1f1f1;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
@@ -16,20 +16,20 @@
   cursor: default;
 }
 .Btn.md {
-  height: 40px;
+  height: 50px;
 }
 .Btn.lg {
-  height: 55px;
+  height: 60px;
 }
 .Btn.square {
   padding: 2px;
-  width: 35px;
-}
-.Btn.square.md {
   width: 40px;
 }
+.Btn.square.md {
+  width: 50px;
+}
 .Btn.square.lg {
-  width: 55px;
+  width: 60px;
 }
 .Btn.primary {
   background: linear-gradient(#f66834, #eb470c);
@@ -58,22 +58,22 @@
 @media (min-width: 1199px) {
   .Btn {
     padding: 2px 15px;
-    height: 40px;
+    height: 50px;
   }
   .Btn.md {
-    height: 45px;
-  }
-  .Btn.lg {
     height: 60px;
   }
+  .Btn.lg {
+    height: 65px;
+  }
   .Btn.square {
-    width: 40px;
+    width: 50px;
   }
   .Btn.square.md {
-    width: 45px;
+    width: 60px;
   }
   .Btn.square.lg {
-    width: 60px;
+    width: 65px;
   }
   .Btn span {
     font-size: 15px;

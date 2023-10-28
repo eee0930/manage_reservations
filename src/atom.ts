@@ -5,8 +5,8 @@ export interface IReservation {
   name: string;
   phone: string;
   date: string;
-  guests: number;
-  tables?: number[][];
+  guests: string;
+  tables?: string;
   note?: string;
   isSeated: boolean;
 }
