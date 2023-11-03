@@ -39,6 +39,7 @@ function NewReservation({ moveListPage }: INewReservation) {
           note,
           isSeated: false,
         };
+        console.log(newReservation);
         return [...prev, newReservation];
       });
     }

@@ -35,14 +35,16 @@
   background: linear-gradient(#f66834, #eb470c);
   width: 100%;
 }
-.Btn.primary span {
-  color: #fff;
-}
+
 .Btn span {
   display: none;
   font-size: 13px;
   color: #525252;
   margin: 0 3px;
+}
+.Btn.primary span {
+  display: inline-block;
+  color: #fff;
 }
 .Btn.lg span {
   font-size: 15px;

@@ -1,15 +1,76 @@
 .card-container {
   width: 100%;
   height: calc(100% - 62px);
-  padding: 1rem;
+  overflow: auto;
+  padding: 1.2rem;
 }
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
   max-width: 100%;
+  margin: 0 -0.5rem;
+}
+.card-cover {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+.card-body {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #636363;
+}
+.card-body .col, .card-body .col-auto {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.card-body {
+  min-height: 200px;
+}
+.card-body label {
+  padding: 7px 10px;
+  border-radius: 1rem;
+  background: linear-gradient(#fbfbfb, #f1f1f1);
+  font-size: 11px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+.card-body span {
+  font-size: 11px;
+}
+.card-body .empty {
+  color: #999999;
+  font-style: italic;
+  font-size: 11px;
+}
+.card-body svg {
+  width: 18px;
+  height: 18px;
+  transform: translateY(5px);
+  margin-right: 3px;
+}
+.card-body label svg {
+  margin-right: 0;
+  width: 15px;
+}
+@media (min-width: 768px) {
+  .card-cover {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
+@media(min-width: 991px) {
+  .card-cover {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
 @media (min-width: 1199px) {
   .card-container {
     height: calc(100% - 76px);
