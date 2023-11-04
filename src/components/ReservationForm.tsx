@@ -7,6 +7,7 @@ import { ReactComponent as MinusIcon } from '../assets/math-minus.svg';
 import { ReactComponent as PlusIcon } from '../assets/math-plus.svg';
 import { ReactComponent as DownIcon } from '../assets/arrow_drop_down.svg';
 import { ReactComponent as EditIcon } from '../assets/edit.svg';
+import { useInput } from '../hooks/useInputs';
 
 interface IReservationForm {
   isAddForm: boolean;
@@ -15,42 +16,12 @@ interface IReservationForm {
 }
 
 type Event = React.MouseEvent<HTMLButtonElement>;
-type ChangeE = React.ChangeEvent<HTMLInputElement>;
 
 function ReservationForm({
   isAddForm,
   reservation,
   callback,
 }: IReservationForm) {
-  const [nameValue, setNameValue] = useState(
-    reservation?.name ? reservation.name : ''
-  );
-  const [phoneValue, setPhoneValue] = useState(
-    reservation?.phone ? reservation.phone : ''
-  );
-  const [dateValue, setDateValue] = useState('Today, 3:30 PM');
-  const [guestSize, setGuestSize] = useState(
-    reservation?.guests ? +reservation.guests : 1
-  );
-  const [tables, setTables] = useState(
-    reservation?.tables ? JSON.parse(reservation?.tables) : undefined
-  );
-  const [disabledBtn, setDisabledBtn] = useState(true);
-
-  const removeReservation = () => {};
-
-  const handleChangeName = (e: ChangeE) => {
-    const target = e.target;
-    const value = target.value;
-    setNameValue(value);
-    changeClass(target, value);
-  };
-  const handleChangePhone = (e: ChangeE) => {
-    const target = e.target;
-    const value = target.value;
-    setPhoneValue(value);
-    changeClass(target, value);
-  };
   const changeClass = (
     target: (EventTarget & HTMLInputElement) | HTMLTextAreaElement,
     value: string
@@ -61,13 +32,36 @@ function ReservationForm({
       target.classList.remove('inputed');
     }
   };
+  const nameValue = useInput(reservation?.name ? reservation.name : '', {
+    callback: changeClass,
+  });
+  const phoneValue = useInput(reservation?.phone ? reservation.phone : '', {
+    callback: changeClass,
+  });
+  const dateValue = useInput('Today, 3:30 PM', { callback: changeClass });
+  const noteValue = useInput(reservation?.note ? reservation?.note : '', {
+    callback: changeClass,
+  });
+  const [guestSize, setGuestSize] = useState(
+    reservation?.guests ? +reservation.guests : 1
+  );
+  const [tables, setTables] = useState(
+    reservation?.tables ? JSON.parse(reservation?.tables) : undefined
+  );
+  const [disabledBtn, setDisabledBtn] = useState(true);
+
+  const removeReservation = () => {};
 
   const openSelectDate = (e: Event) => {
     e.preventDefault();
   };
 
   useEffect(() => {
-    if (nameValue?.length && phoneValue?.length && dateValue?.length) {
+    if (
+      nameValue?.value.length &&
+      phoneValue?.value.length &&
+      dateValue?.value.length
+    ) {
       setDisabledBtn(false);
     } else {
       setDisabledBtn(true);
@@ -89,25 +83,13 @@ function ReservationForm({
         {/* 필수요소 */}
         <div className="row">
           <div className="form-group col">
-            <input
-              name="name"
-              type="text"
-              className="input"
-              value={nameValue}
-              onChange={handleChangeName}
-            />
+            <input name="name" type="text" className="input" {...nameValue} />
             <label>
               Name<span>*</span>
             </label>
           </div>
           <div className="form-group col">
-            <input
-              name="phone"
-              type="text"
-              className="input"
-              value={phoneValue}
-              onChange={handleChangePhone}
-            />
+            <input name="phone" type="text" className="input" {...phoneValue} />
             <label>
               Phone<span>*</span>
             </label>
@@ -115,9 +97,9 @@ function ReservationForm({
           <div className="form-group full col">
             <Button callback={openSelectDate} sizeIdx={1}>
               <TodayIcon style={{ width: '15px', marginRight: '5px' }} />
-              {dateValue ? dateValue : <span>Select Date</span>}
+              {dateValue.value ? dateValue.value : <span>Select Date</span>}
             </Button>
-            <input type="hidden" name="date" value={dateValue} />
+            <input name="date" type="hidden" {...dateValue} />
           </div>
         </div>
         <div className="row">
@@ -130,7 +112,7 @@ function ReservationForm({
             <Button callback={handlePlusGuestSize} styleIdx={2} sizeIdx={1}>
               <PlusIcon style={{ width: '22px' }} />
             </Button>
-            <input type="hidden" name="guests" value={guestSize} />
+            <input name="guests" type="hidden" value={guestSize} />
           </div>
           <div className="form-group select-form col">
             <div className="input">
@@ -143,19 +125,12 @@ function ReservationForm({
             </div>
             {!tables && <label>Select Table</label>}
             <DownIcon />
-            <input type="hidden" name="tables" value={JSON.stringify(tables)} />
+            <input name="tables" type="hidden" value={JSON.stringify(tables)} />
           </div>
         </div>
         <div className="row">
           <div className="form-group col">
-            <textarea
-              name="note"
-              className="input"
-              value={reservation?.note}
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                changeClass(e.target, e.target.value)
-              }
-            />
+            <textarea name="note" className="input" {...noteValue} />
             <label>
               Add Note...{' '}
               <EditIcon

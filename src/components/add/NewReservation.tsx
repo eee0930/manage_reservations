@@ -11,17 +11,17 @@ import '../ReservationForm.css';
 interface INewReservation {
   moveListPage: () => void;
 }
-
 interface IForm {
   [key: string]: string;
 }
+type TMouseEvent = React.MouseEvent<HTMLButtonElement>;
 function NewReservation({ moveListPage }: INewReservation) {
   const setReservationList =
     useSetRecoilState<IReservation[]>(reservationListState);
 
   const addForm = useRef<HTMLFormElement>(null);
 
-  const saveReservation = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const saveReservation = (e: TMouseEvent) => {
     e.preventDefault();
     if (addForm.current) {
       const formData = new FormData(addForm?.current);
@@ -39,7 +39,6 @@ function NewReservation({ moveListPage }: INewReservation) {
           note,
           isSeated: false,
         };
-        console.log(newReservation);
         return [...prev, newReservation];
       });
     }
